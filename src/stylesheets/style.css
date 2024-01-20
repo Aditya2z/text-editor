@@ -196,6 +196,7 @@ video {
 
 .grid {
     display: grid;
+    grid-template-columns: repeat(10, 1fr);
 }
 
 /* Headings */
@@ -227,10 +228,102 @@ h1 {
     transform: translateY(1px);
 }
 
-/* Editor */
+/* Editor
 .editor {
     min-height: 80vh;
     margin-top: 1rem;
     border: 2px solid rgba(43, 144, 226, 0.815);
     padding: 1rem .75rem;
 }
+
+/* placeholder styles */
+/* .public-DraftEditorPlaceholder-root {
+    color: #949494;
+}
+
+/* Heading styles */
+/* .heading {
+    font-weight: 700;
+    font-size: 1.5rem;
+} */
+
+/* Bold styles */
+/* .bold {
+    font-weight: 700;
+} */
+
+/* red-text styles */
+/* .red-text {
+    color: red;
+} */
+
+/* underline-text */
+/* .underline-text {
+    text-decoration: underline;
+}  */
+
+.RichEditor-root {
+    background: #fff;
+    border: 2px solid rgba(43, 144, 226, 0.815);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    padding: 15px;
+    min-height: 80vh;
+    margin-top: 1rem;
+  }
+  
+  .RichEditor-editor {
+    border-top: 1px solid #ddd;
+    cursor: text;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .RichEditor-editor .public-DraftEditorPlaceholder-root,
+  .RichEditor-editor .public-DraftEditor-content {
+    margin: 0 -15px -15px;
+    padding: 15px;
+  }
+  
+  .RichEditor-editor .public-DraftEditor-content {
+    min-height: 100px;
+  }
+  
+  .RichEditor-hidePlaceholder .public-DraftEditorPlaceholder-root {
+    display: none;
+  }
+  
+  .RichEditor-editor .RichEditor-blockquote {
+    border-left: 5px solid #eee;
+    color: #666;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    margin: 16px 0;
+    padding: 10px 20px;
+  }
+  
+  .RichEditor-editor .public-DraftStyleDefault-pre {
+    background-color: rgba(0, 0, 0, 0.05);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 20px;
+  }
+  
+  .RichEditor-controls {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    margin-bottom: 5px;
+    user-select: none;
+  }
+  
+  .RichEditor-styleButton {
+    color: #999;
+    cursor: pointer;
+    margin-right: 16px;
+    padding: 2px 0;
+    display: inline-block;
+  }
+  
+  .RichEditor-activeButton {
+    color: #5890ff;
+  }

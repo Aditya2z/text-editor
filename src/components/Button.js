@@ -1,15 +1,18 @@
-function Button(props) {
-  const { contentJson } = props;
+import React from 'react';
+
+function Button({ contentJson }) {
+  const handleClick = () => {
+    localStorage.setItem("editorContent", contentJson);
+  };
+
   return (
     <button
       className="btn"
-      onClick={() => {
-        localStorage.setItem("editorContent", contentJson);
-      }}
+      onClick={handleClick}
     >
       Save
     </button>
   );
-}
+};
 
 export default Button;
