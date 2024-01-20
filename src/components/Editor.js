@@ -8,12 +8,13 @@ import {
   convertToRaw,
 } from "draft-js";
 import Button from "./Button";
+import { customDecorator } from "./Decorators";
 
 class MyEditor extends React.Component {
   constructor(props) {
     super(props);
     this.state = { editorState: this.initializeEditorState() };
-    this.onChange = (editorState) => this.setState({ editorState });
+    this.onChange = (newEditorState) => this.setState({ editorState: newEditorState });
     this.contentJsonObj = React.createRef();
 
     this.handleKeyCommand = this._handleKeyCommand.bind(this);
@@ -29,8 +30,8 @@ class MyEditor extends React.Component {
   initializeEditorState = () => {
     const savedContent = localStorage.getItem("editorContent");
     return savedContent
-      ? EditorState.createWithContent(convertFromRaw(JSON.parse(savedContent)))
-      : EditorState.createEmpty();
+      ? EditorState.createWithContent(convertFromRaw(JSON.parse(savedContent)), customDecorator)
+      : EditorState.createEmpty(customDecorator);
   };
 
   componentDidUpdate(prevState) {
