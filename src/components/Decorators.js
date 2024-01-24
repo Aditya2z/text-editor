@@ -1,4 +1,5 @@
 import { CompositeDecorator } from "draft-js";
+import React from "react";
 
 const redTextDecoratorStrategy = (contentBlock, callback) => {
   const text = contentBlock.getText();
@@ -35,7 +36,12 @@ const boldDecoratorStrategy = (contentBlock, callback) => {
 };
 
 const boldDecoratorComponent = (props) => {
-  return <div className={"bold"}>{props.children}</div>;
+  const childrenArray = React.Children.toArray(props.children);
+
+  // Extract the actual text content
+  const text = childrenArray[0].props.text;
+  console.log(text.substring(2, text.length));
+  return <div className={"bold"} autoFocus>{text.substring(2, text.length)}</div>;
 };
 
 const headingDecoratorStrategy = (contentBlock, callback) => {
@@ -94,4 +100,3 @@ export const customDecorator = new CompositeDecorator([
     component: underlineDecoratorComponent,
   },
 ]);
-
