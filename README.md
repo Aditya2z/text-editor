@@ -5,8 +5,7 @@ This project is a simple text editor created using Create React App and integrat
 To run the project, follow these steps:
 
 ## Clone the repository:
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/Aditya2z/text-editor.git
 
 ## Install dependencies:
 npm install
