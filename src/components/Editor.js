@@ -14,7 +14,10 @@ class MyEditor extends React.Component {
   constructor(props) {
     super(props);
     this.state = { editorState: this.initializeEditorState() };
-    this.onChange = (newEditorState) => this.setState({ editorState: newEditorState });
+    this.onChange = (newEditorState) => {
+
+      this.setState({ editorState: newEditorState })
+    };
     this.contentJsonObj = React.createRef();
 
     this.handleKeyCommand = this._handleKeyCommand.bind(this);
@@ -34,6 +37,7 @@ class MyEditor extends React.Component {
       : EditorState.createEmpty(customDecorator);
   };
 
+  // Storing the editor content in a refrence object to be saved in localstorage
   componentDidUpdate(prevState) {
     if (this.state.editorState !== prevState.editorState) {
       const contentState = this.state.editorState.getCurrentContent();

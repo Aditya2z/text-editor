@@ -17,7 +17,14 @@ const redTextDecoratorStrategy = (contentBlock, callback) => {
 };
 
 const redTextDecoratorComponent = (props) => {
-  return <div className={"red-text"}>{props.children}</div>;
+  const originalText = props.children[0].props.text;
+  const modifiedText = originalText.replace("** ", "   ");
+
+  return (
+    <div className={"red-text"}>
+      {React.cloneElement(props.children[0], { text: modifiedText })}
+    </div>
+  );
 };
 
 const boldDecoratorStrategy = (contentBlock, callback) => {
@@ -36,12 +43,14 @@ const boldDecoratorStrategy = (contentBlock, callback) => {
 };
 
 const boldDecoratorComponent = (props) => {
-  const childrenArray = React.Children.toArray(props.children);
+  const originalText = props.children[0].props.text;
+  const modifiedText = originalText.replace("* ", "  ");
 
-  // Extract the actual text content
-  const text = childrenArray[0].props.text;
-  console.log(text.substring(2, text.length));
-  return <div className={"bold"} autoFocus>{text.substring(2, text.length)}</div>;
+  return (
+    <div className={"bold"}>
+      {React.cloneElement(props.children[0], { text: modifiedText })}
+    </div>
+  );
 };
 
 const headingDecoratorStrategy = (contentBlock, callback) => {
@@ -60,7 +69,14 @@ const headingDecoratorStrategy = (contentBlock, callback) => {
 };
 
 const headingDecoratorComponent = (props) => {
-  return <div className={"heading"}>{props.children}</div>;
+  const originalText = props.children[0].props.text;
+  const modifiedText = originalText.replace("# ", "  ");
+
+  return (
+    <div className={"heading"}>
+      {React.cloneElement(props.children[0], { text: modifiedText })}
+    </div>
+  );
 };
 
 const underlineDecoratorStrategy = (contentBlock, callback) => {
@@ -79,7 +95,14 @@ const underlineDecoratorStrategy = (contentBlock, callback) => {
 };
 
 const underlineDecoratorComponent = (props) => {
-  return <div className={"underline"}>{props.children}</div>;
+  const originalText = props.children[0].props.text;
+  const modifiedText = originalText.replace("*** ", "    ");
+
+  return (
+    <div className={"underline"}>
+      {React.cloneElement(props.children[0], { text: modifiedText })}
+    </div>
+  );
 };
 
 export const customDecorator = new CompositeDecorator([
