@@ -5,13 +5,20 @@ This project is a simple text editor created using Create React App and integrat
 To run the project, follow these steps:
 
 ## Clone the repository:
+```bash
 git clone https://github.com/Aditya2z/text-editor.git
+```
 
 ## Install dependencies:
+```bash
 npm install
+```
 
 ## Start the development server:
+```bash
 npm start
+```
+
 This will run the app in development mode. Open http://localhost:3000 to view the text editor in your browser. The page will reload as you make changes, and lint errors can be seen in the console.
 
 ## Features
