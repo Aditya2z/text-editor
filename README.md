@@ -15,12 +15,28 @@ npm start
 This will run the app in development mode. Open http://localhost:3000 to view the text editor in your browser. The page will reload as you make changes, and lint errors can be seen in the console.
 
 ## Features
-This simple text editor includes the following features:
 
--Basic text formatting (bold, italic, underline).
--Lists (both ordered and unordered).
--Undo and redo functionality.
--Draft.js provides a flexible and extensible framework for building rich text editing experiences.
+- Basic text formatting (bold, italic, underline).
+- Lists (both ordered and unordered).
+- Undo and redo functionality.
+- Draft.js provides a flexible and extensible framework for building rich text editing experiences.
+
+### Additional Features
+
+- Typing `#` as the first string in a line & pressing space makes anything you type afterwards on the same line be in a “Heading” format. On pressing space, the aforementioned `#` disappears.
+  - Example: Typing `# This is a heading` results in a heading format.
+
+- Typing `*` as the first string in a line and pressing space corresponds to “bold” format.
+  - Example: Typing `* This is bold text*` results in bold formatting.
+
+- Typing `**` and space creates a red line.
+  - Example: Typing `** This is a red line**` results in a red line.
+
+- Typing `***` and space creates an underline.
+  - Example: Typing `*** This is underlined***` results in underline formatting.
+
+- Pressing `Save` button persists everything typed in the editor into `localStorage`. On refreshing the page, the saved info is refilled into the editor.
+
 
 ## Customization
 Feel free to customize and extend the text editor according to your requirements. The Draft.js documentation (https://draftjs.org/docs/getting-started) can guide you in understanding how to work with Draft.js and its various features.
